@@ -38,9 +38,10 @@ int main()
                 break;
 
             default:
-                printf("Esse nao eh um valor valido.");
+                printf("Esse nao eh um valor valido.\n");
+                break;
         }
-
+        printf("----------\n");
     }
 }
 
@@ -89,7 +90,7 @@ void calcGasolina(){
 
     litros = (float) valor / preco;
 
-    printf("Serao abastecidos %.2f litros.", litros);
+    printf("Serao abastecidos %.2f litros.\n", litros);
 }
 
 void calcValores(){
