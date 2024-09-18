@@ -2,10 +2,10 @@
 
 int main()
 {   
-    double idade, homens, mulheres, idadeHomens, idadeMulheres, peso, pesoHomens, pesoMulheres;
+    double idade, homens, mulheres, idadeHomens, peso, pesoMulheres;
     char sexo;
 
-    idade=homens=mulheres=idadeHomens=idadeMulheres=peso=pesoHomens=pesoMulheres=0;
+    idade=homens=mulheres=idadeHomens=peso=pesoMulheres=0;
 
     for(int i = 0; i < 10; i++){
         printf("Insira sua idade:\n");
