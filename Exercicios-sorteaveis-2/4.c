@@ -25,19 +25,19 @@ int main()
         switch(entrada){
             case 1:
                 resultado=n1*n2;
-                printf("A multiplicacao de %d e %d eh: %.0lf\n", n1, n2, resultado);
+                printf("%d x %d = %.0lf\n", n1, n2, resultado);
                 break;
             case 2:
                 resultado=n1+n2;
-                printf("A soma de %d e %d eh: %.0lf\n", n1, n2, resultado);
+                printf("%d + %d = %.0lf\n", n1, n2, resultado);
                 break;
             case 3:
                 resultado=n1-n2;
-                printf("A subtracao de %d e %d eh: %.0lf\n", n1, n2, resultado);
+                printf("%d - %d = %.0lf\n", n1, n2, resultado);
                 break;
             case 4:
                 resultado=n1/n2;
-                printf("A divisao de %d e %d eh: %.2lf\n", n1, n2, resultado);
+                printf("%d / %d = %.0lf\n", n1, n2, resultado);
                 break;
             case 5:
                 printf("Saindo do programa...\n");
