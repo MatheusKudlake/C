@@ -1,39 +1,37 @@
 #include <stdio.h>
 
-int main(){
-    int nota[5][3];
-    float soma[5][3], media[5][3];
+int main()
+{
+    int notas[5][3];
+    float medias[5];
 
-    for(int i=0; i<5; i++){ //define a matriz soma para 0
-        for(int j=0; j<2; j++){
-            soma[i][j]=0;
+    for(int i=0; i<5; i++){
+        medias[i]=0;
+    }
+
+    for(int l=0; l<5; l++){
+        for(int c=0; c<3; c++){
+            printf("Digite a nota %d do aluno %d:\n", c+1, l+1);
+            scanf("%d", &notas[l][c]);
+            medias[l]+=notas[l][c];
         }
     }
 
-    for(int i=0; i<5; i++){ //lê os dados do usuário
-        for(int j=0; j<2; j++){
-            printf("Insira o valor da nota %d do aluno %d:\n", j+1, i+1);
-            scanf("%d", &nota[i][j]);
-            soma[i][j]+=nota[i][j];
-        }
+    for(int i=0; i<5; i++){
+        medias[i]/=3;
     }
 
-    for(int i=0; i<5; i++){ //exibe a nota
-        for(int j=0; j<2; j++){
-            printf("Nota %d Aluno %d: [%d]\n", j+1, i+1, nota[i][j]);
+    for(int l=0; l<5; l++){
+        for(int c=0; c<3; c++){
+            printf("Nota %d do aluno %d: %d\n", c+1, l+1, notas[l][c]);
         }
-    }
-
-    printf("-----------------\n");
-
-    for(int i=0; i<5; i++){ //calcula a media
-        for(int j=0; j<2; j++){
-            media[i][j]=soma[i][j]/3;
+        printf("Media: %.2f\n", medias[l]);
+        if(medias[l]>=6){
+            printf("Aprovado. Parabens.\n");
+        }else{
+            printf("Reprovado. Burro.\n");
         }
-    }
-
-    for(int i=0; i<5; i++){ //exibe a media
-        printf("Media do aluno %d: %.2f\n", i+1, media[i][j]);
+        printf("----------\n");
     }
 
     return 0;
