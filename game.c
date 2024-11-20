@@ -39,24 +39,25 @@ void GerarInstrucoes(){
 }
 
 void VerTentativas(){
-    for(int i=0; i<sessao; i++){
+    for(int i=1; i<=sessao; i++){
 
         printf("Sessao %d:\n", i);
 
-        for(int j=0; j<tentSessao[sessao]; j++){
+        for(int j=0; j<tentSessao[i]; j++){
             printf("[%d]", j1.sessoes[i][j]);
         }
 
-        printf("\n");
+        printf("\n\n");
     }
 }
 
 void Jogo(){
     int numero, palpite, tent=0;
 
+    sessao++;
+
     srand(time(NULL));
     numero=rand()%100;
-    printf("%d\n", numero);
     printf("Adivinhe o numero escolhido: ");
     
     do{
@@ -84,8 +85,6 @@ void Jogo(){
             for(int i=0; i<tentSessao[sessao]; i++){
                 j1.sessoes[sessao][i]=j1.tentativas[i];
             }
-            
-            sessao++;
 
         }
     }while(palpite!=numero);
