@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int entrada=0;
+int entrada=0, sessao=0, tentSessao[5];
 
 struct jogador{
     char nome[50];
@@ -38,6 +38,18 @@ void GerarInstrucoes(){
     printf("O objetivo eh adivinhar o numero escolhido com o menor numero de tentativas possivel.\n");
 }
 
+void VerTentativas(){
+    for(int i=0; i<sessao; i++){
+
+        printf("Sessao %d:\n", i+1);
+
+        for(int j=0; j<tentSessao[sessao]; j++){
+            printf("[%d]", j1.sessoes[i][j]);
+        }
+
+        printf("\n");
+    }
+}
 
 void Jogo(){
     int numero, palpite, tent=0;
@@ -54,17 +66,27 @@ void Jogo(){
 
         if(palpite>numero){
             printf("Digite um numero menor: ");
-            
+
         }else if(palpite<numero){
             printf("Digite um numero maior: ");
-
+            
         }else{
             printf("Parabens! O numero escolhido era %d!\n", numero);
             printf("Suas tentativas foram:\n");
+
             for(int i=0; i<tent; i++){
-                printf("[%d] ", j1.tentativas[tent]);
+                printf("[%d] ", j1.tentativas[i]);
             }
             printf("\n");
+
+            tentSessao[sessao]=tent;
+
+            for(int i=0; i<tentSessao[sessao]; i++){
+                j1.sessoes[sessao][i]=j1.tentativas[i];
+            }
+            
+            sessao++;
+
         }
     }while(palpite!=numero);
 }
@@ -83,7 +105,7 @@ int main()
                 GerarInstrucoes();
                 break;
             case 3:
-                
+                VerTentativas();
                 break;
             case 4:
                 printf("Saindo do jogo...\n");
