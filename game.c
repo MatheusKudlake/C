@@ -41,7 +41,7 @@ void GerarInstrucoes(){
 void VerTentativas(){
     for(int i=0; i<sessao; i++){
 
-        printf("Sessao %d:\n", i+1);
+        printf("Sessao %d:\n", i);
 
         for(int j=0; j<tentSessao[sessao]; j++){
             printf("[%d]", j1.sessoes[i][j]);
